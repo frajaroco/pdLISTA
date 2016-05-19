@@ -1,4 +1,4 @@
-LocalPdf <- function(ptsx,ptsy,ptst,npt,ds,nds,dt,ndt,bsupt,binft,xi,yi,ti,i,ks,kt,hs,ht,are,edg,wrs){
+localpdf <- function(ptsx,ptsy,ptst,npt,ds,nds,dt,ndt,bsupt,binft,xi,yi,ti,i,ks,kt,hs,ht,are,edg,wrs){
 
 stlistapd <- array(0, dim = c(nds,ndt)) 
 
