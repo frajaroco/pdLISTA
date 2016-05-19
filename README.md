@@ -4,7 +4,7 @@ Spatio-temporal cluster detection and classification through of the product dens
 
 ## Installation guide
 
-The easiest way to install the development version of mvstpp from github is using the devtools package which can be installed run the next command:
+The easiest way to install the development version of pdLISTA from github is using the devtools package which can be installed run the next command:
 ```
 install.packages('devtools', dependencies=TRUE)
 ```
