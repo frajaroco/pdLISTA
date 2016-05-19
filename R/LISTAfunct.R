@@ -23,6 +23,26 @@
 #' @references Cressie, N. and Collins, L. B. (2001). Analysis of spatial point patterns using bundles of product density LISA functions. Journal of Agricultural, Biological, and Environmental Statistics 6, 118-135.
 #' @references Cressie, N. and Collins, L. B. (2001). Patterns in spatial point locations: Local indicators of spatial association in a minefield with clutter Naval Research Logistics (NRL), John Wiley & Sons, Inc. 48, 333-347.
 #' @references Stoyan, D. and Stoyan, H. (1994). Fractals, random shapes, and point fields: methods of geometrical statistics. Chichester: Wiley.
+#' @examples
+#' ## Not run:
+#' #################
+#'
+#' # Realisations of the homogeneous spatio-temporal Poisson processes
+#' stp <- rpp(100)$xyt
+#' plot(stp)
+#' 
+#' out <- LISTAfunct(stp)
+#' 
+#' ep <-sample(1:96, 1)
+#' ep
+#' z1 <- out$hlista[,,ep]
+#' 
+#' par(mfrow=c(1,1))
+#' persp(out$ds,out$dt,z1,theta=-30,phi=30,zlim=range(z1,na.rm=TRUE),expand=0.7,ticktype="detailed",xlab="r = distance",ylab="t = time",zlab="",cex.axis=0.7, cex.lab=0.7)
+#' contour(out$ds,out$dt,z1,drawlabels=TRUE,axes=TRUE,xlab="r = distance",ylab="t = time",cex.axis=0.7, cex.lab=0.7)
+#'
+#' ## End(Not run)
+#' ####################
 LISTAfunct <- function(xyt,s.region,t.region,ds,dt,ks="epanech",hs,kt="box",ht,correction=TRUE){
   
   pts <- xyt[, 1:2]
