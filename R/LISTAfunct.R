@@ -8,13 +8,15 @@
 #' @param ks A kernel function for the spatial distances. The default is \code{"epanech"} the Epanechnikov kernel. It can also be \code{"box"} kernel, or \code{"biweight"}.
 #' @param kt A kernel function for the temporal distances. The default is \code{"epanech"} the Epanechnikov kernel. It can also be \code{"box"} kernel, or \code{"biweight"}.
 #' @param hs A bandwidth of the kernel function \code{ks}.
-#' @details An individual product density LISA functions \eqn{\rho^{(2)i}(.)} should reveal the extent of the contribution of the event \eqn{u_i} to the global estimator of the second-order product density \eqn{\rho^{(2)}(.)}, and may provide a further description of structure in the data (e.g., determining events with similar local structure through dissimilarity measures of the individual LISA functions), for more details see Cressie and Collins (2001).
+#' @param ht A bandwidth of the kernel function \code{kt}.
+#' @param correction It is \code{TRUE} by default and the Ripley's isotropic edge-correction weights are computed. If it is \code{FALSE} the estimated is without edge-correction.
+#' @details An individual product density LISTA functions \eqn{\rho^{(2)i}(.,.)} should reveal the extent of the contribution of the event \eqn{(u_i,t_i)} to the global estimator of the second-order product density \eqn{\rho^{(2)}(.,.)}, and may provide a further description of structure in the data (e.g., determining events with similar local structure through dissimilarity measures of the individual LISTA functions), for more details see Cressie and Collins (2001).
 #' @return A list containing:
 #' \itemize{
-#'   \item \code{lisa}: A matrix containing the values of the estimation of \eqn{\widehat{\rho}^{(2)i}(r)}  for each one of \eqn{n} points of the process by rows.
-#'   \item \code{ds}: If \code{ds} is missing, a vector of distances \code{u} at which \eqn{\rho^{(2)i}(u)} is computed under the restriction \eqn{0<\epsilon<r}.
-#'   \item \code{kernel}: A vector of names and bandwidth of the spatial kernel.
-#'   \item \code{s.region}: Parameter passed in argument.
+#'   \item \code{hlista}: A list containing the values of the estimation of \eqn{\widehat{\rho}^{(2)i}(r,t)} for each one of \eqn{n} points of the process by matrixs.
+#'   \item \code{ds}: Vector of distances \code{u} at which \eqn{\rho^{(2)i}(r,t)} is computed under the restriction \eqn{0<\epsilon<r}.
+#'   \item \code{dt}: Vector of distances \code{v} at which \eqn{\rho^{(2)i}(r,t)} is computed under the restriction \eqn{0<\delta<t}.
+#'   \item \code{kernel}: A vector of names and bandwidth of the spatial and temporal kernel.
 #'   }
 #' @author Francisco J. Rodriguez-Cortes <cortesf@@uji.es> \url{https://fjrodriguezcortes.wordpress.com}
 #' @references Baddeley, A. and Turner, J. (2005). \code{spatstat}: An R Package for Analyzing Spatial Point Pattens. Journal of Statistical Software 12, 1-42.
