@@ -42,7 +42,7 @@
 #' contour(out$ds,out$dt,z1,drawlabels=TRUE,axes=TRUE,xlab="r = distance",ylab="t = time",cex.axis=0.7, cex.lab=0.7)
 #'
 #' ## End(Not run)
-#' ####################
+#' #################
 LISTAfunct <- function(xyt,s.region,t.region,ds,dt,ks="epanech",hs,kt="box",ht,correction=TRUE){
   
   pts <- xyt[, 1:2]
