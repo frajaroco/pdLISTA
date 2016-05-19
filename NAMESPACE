@@ -1,6 +1,8 @@
 useDynLib(pdLISTA)
 exportPattern("^[[:alpha:]]+")
 
+import(sp)
+import(stats)
 import(splancs)
 import(spatstat)
 import(KernSmooth)

@@ -36,6 +36,7 @@ LISTAfunct <- function(xyt,s.region,t.region,ds,dt,ks="epanech",hs,kt="box",ht,c
     X <- poly[[1]]$x
     Y <- poly[[1]]$y
     s.region <- cbind(X,Y)}
+    srspt <- owin(poly=list(x=s.region[,1],y=s.region[,2]))
   
   if (missing(t.region)) t.region <- range(xyt[ ,3],na.rm=TRUE)
   
@@ -46,8 +47,6 @@ LISTAfunct <- function(xyt,s.region,t.region,ds,dt,ks="epanech",hs,kt="box",ht,c
   if (missing(ht)){
     tdm <- dist(ptst)
     ht <- dpik(tdm,kernel=kt,range.x=c(min(tdm),max(tdm)))}
-  
-  srspt <- owin(poly=list(x=s.region[,1],y=s.region[,2]))
   
   if (missing(ds)){
     rect <- as.rectangle(srspt)
@@ -61,20 +60,23 @@ LISTAfunct <- function(xyt,s.region,t.region,ds,dt,ks="epanech",hs,kt="box",ht,c
   nds <- length(ds)
   
   if (missing(dt)){
-    maxt <- t.region/4
+    maxt <- diff(t.region)/4
     dt <- seq(ht*1.01, maxt, len=50)}
   
   dt <- sort(dt)
   if(dt[1]==0) {
     dt<- dt[-1]}
 
-  nt <- length(dt)
+  ndt <- length(dt)
   
   bsupt <- max(t.region)
   binft <- min(t.region)
-  are <- area.owin(s.region)
+  are <- area(srspt)
 
   kernel=c(ks=ks,hs=hs,kt=kt,ht=ht,edg=correction)
+  
+  stpxy <- ppp(x=ptsx,y=ptsy,window=srspt)
+  wrs <- edge.Ripley(stpxy,pairdist(pts))
 
     if (ks=="box") ks=1 	
 	else if (ks=="epanech") ks=2
