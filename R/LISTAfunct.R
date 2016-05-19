@@ -28,12 +28,13 @@
 #' #################
 #'
 #' # Realisations of the homogeneous spatio-temporal Poisson processes
+#' 
 #' stp <- rpp(100)$xyt
 #' plot(stp)
 #' 
 #' out <- LISTAfunct(stp)
 #' 
-#' ep <-sample(1:96, 1)
+#' ep <-sample(1:96,1)
 #' ep
 #' z1 <- out$hlista[,,ep]
 #' 
