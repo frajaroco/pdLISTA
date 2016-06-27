@@ -12,7 +12,7 @@ tbw.stoyan <- function(xyt,t.region,stoyan=0.15){
   # Stoyan & Stoyan 1995, eq (15.16), page 285
   h <- stoyan/sqrt(lambda)
   # conversion to standard deviation
-  tbw <- h/sqrt(5)
+  tbw <- h#/sqrt(5)
   
   invisible(return(tbw)) 
 }
