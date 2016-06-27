@@ -20,7 +20,7 @@ if (missing(s.region)){
   # Stoyan & Stoyan 1995, eq (15.16), page 285
   h <- stoyan/sqrt(lambda)
   # conversion to standard deviation
-  sbw <- h/sqrt(5)
+  sbw <- h#/sqrt(5)
   
   invisible(return(sbw=sbw)) 
 }
