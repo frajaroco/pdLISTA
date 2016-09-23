@@ -44,7 +44,7 @@
 #'
 #' ## End(Not run)
 #' #################
-LISTAfunct <- function(xyt,s.region,t.region,ds,dt,ks="epanech",hs,kt="box",ht,correction=TRUE){
+LISTAfunct <- function(xyt,s.region,t.region,ds,dt,ks="epanech",hs,kt="epanech",ht,correction=TRUE){
   
   pts <- xyt[, 1:2]
   xytimes <- xyt[ ,3]
