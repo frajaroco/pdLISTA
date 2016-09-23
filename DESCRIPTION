@@ -1,23 +1,18 @@
 Package: pdLISTA
 Type: Package
 Title: LISTA functions
-Version: 0.1
+Version: 0.1.1
 Nickname: Coffee Aroma
 Date: 2016-05-19
 Author: Francisco J. Rodriguez-Cortes
 Maintainer: Francisco J. Rodriguez-Cortes <cortesf@uji.es>
 Depends:
-    R (>= 3.3.0),
+    R (>= 3.3.1),
     sp,splancs,
     KernSmooth,
     spatstat,
     stpp
-Description: Basic toolkit for cluster detection in spatio-temporal point
-    patterns through the local versions of the second-order product density function
-    set a powerful tool to address the problem of classification of interesting
-    subpatterns. The LISTA functions can then be grouped into bundles of similar
-    functions using multivariate hierarchical clustering techniques according to a
-    particular statistical distances
+Description: Basic toolkit for cluster detection in spatio-temporal point patterns through the local versions of the second-order product density function as a powerful tool to address the problem of classification of interesting subpatterns. The LISTA functions can  be grouped into bundles of similar functions according to a  particular statistical distances.
 License: GPL-3
 LazyLoad: yes
 NeedsCompilation: yes
