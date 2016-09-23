@@ -4,8 +4,8 @@
 \alias{LISTAfunct}
 \title{Product density LISTA functions}
 \usage{
-LISTAfunct(xyt, s.region, t.region, ds, dt, ks = "epanech", hs, kt = "box",
-  ht, correction = TRUE)
+LISTAfunct(xyt, s.region, t.region, ds, dt, ks = "epanech", hs,
+  kt = "epanech", ht, correction = TRUE)
 }
 \arguments{
 \item{xyt}{Spatial-temporal coordinates \eqn{(x,y,t)} of the point pattern.}
@@ -48,18 +48,20 @@ An individual product density LISTA functions \eqn{\rho^{(2)i}(.,.)} should reve
 #################
 
 # Realisations of the homogeneous spatio-temporal Poisson processes
-
 stp <- rpp(100)$xyt
+# Generated spatio-temporal point pattern
 plot(stp)
 
+# Estimation of product density LISTA functions
 out <- LISTAfunct(stp)
 
-ep <-sample(1:96,1)
-ep
+#Randomly selected point and its product density LISTA 
+ep <-sample(1:length(stp[,1]),1)
 z1 <- out$hlista[,,ep]
 
+# Spatio-temporal LISTA surface
 par(mfrow=c(1,1))
-persp(out$ds,out$dt,z1,theta=-30,phi=30,zlim=range(z1,na.rm=TRUE),expand=0.7,ticktype="detailed",xlab="r = distance",ylab="t = time",zlab="",cex.axis=0.7, cex.lab=0.7)
+persp(out$ds,out$dt,z1,theta=-45,phi=30,zlim=range(z1,na.rm=TRUE),expand=0.7,ticktype="detailed",xlab="r = distance",ylab="t = time",zlab="",cex.axis=0.7, cex.lab=0.7)
 contour(out$ds,out$dt,z1,drawlabels=TRUE,axes=TRUE,xlab="r = distance",ylab="t = time",cex.axis=0.7, cex.lab=0.7)
 
 ## End(Not run)
