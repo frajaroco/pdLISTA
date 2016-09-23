@@ -55,7 +55,7 @@ plot(stp)
 # Estimation of product density LISTA functions
 out <- LISTAfunct(stp)
 
-#Randomly selected point and its product density LISTA 
+# Randomly selected point and its product density LISTA 
 ep <-sample(1:length(stp[,1]),1)
 z1 <- out$hlista[,,ep]
 

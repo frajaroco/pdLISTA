@@ -11,7 +11,7 @@
 #' @param hs A bandwidth of the kernel function \code{ks}.
 #' @param ht A bandwidth of the kernel function \code{kt}.
 #' @param correction It is \code{TRUE} by default and the Ripley's isotropic edge-correction weights are computed. If it is \code{FALSE} the estimated is without edge-correction.
-#' @details An individual product density LISTA functions \eqn{\rho^{(2)i}(.,.)} should reveal the extent of the contribution of the event \eqn{(u_i,t_i)} to the global estimator of the second-order product density \eqn{\rho^{(2)}(.,.)}, and may provide a further description of structure in the data (e.g., determining events with similar local structure through dissimilarity measures of the individual LISTA functions), for more details see Cressie and Collins (2001).
+#' @details An individual product density LISTA functions \eqn{\rho^{(2)i}(.,.)} is a puntual  contribution coming from \eqn{(u_i,t_i)} to the global estimator of the second-order product density \eqn{\rho^{(2)}(.,.)}, and may provide local description of structure in the spatio-temporal point data (e.g., determining events with similar local structure through dissimilarity measures of the individual LISTA functions), for more details see Cressie and Collins (2001).
 #' @return A list containing:
 #' \itemize{
 #'   \item \code{hlista}: A matrix containing the values of the estimation of \eqn{\widehat{\rho}^{(2)i}(r,t)} for the point \eqn{i} of the process by rows.
@@ -29,23 +29,25 @@
 #' #################
 #' 
 #' # Realisations of the homogeneous spatio-temporal Poisson processes
-#' 
 #' stp <- rpp(100)$xyt
+#' # Generated spatio-temporal point pattern
 #' plot(stp)
 #' 
+#' # Randomly selected point and its product density LISTA 
 #' fixed <-sample(1:length(stp[,1]),1)
-#' fixed
-#' 
+#'  
+#' # Estimation of the individual i-th product density LISTA function 
 #' out <- iLISTA(stp,i=fixed)
 #' z1 <- out$hlista
 #' 
+#' # Spatio-temporal LISTA surface
 #' par(mfrow=c(1,1))
-#' persp(out$ds,out$dt,z1,theta=-30,phi=30,zlim=range(z1,na.rm=TRUE),expand=0.7,ticktype="detailed",xlab="r = distance",ylab="t = time",zlab="",cex.axis=0.7, cex.lab=0.7)
+#' persp(out$ds,out$dt,z1,theta=-45,phi=30,zlim=range(z1,na.rm=TRUE),expand=0.7,ticktype="detailed",xlab="r = distance",ylab="t = time",zlab="",cex.axis=0.7, cex.lab=0.7)
 #' contour(out$ds,out$dt,z1,drawlabels=TRUE,axes=TRUE,xlab="r = distance",ylab="t = time",cex.axis=0.7, cex.lab=0.7)
 #' 
 #' ## End(Not run)
 #' #################
-iLISTA <- function(xyt,i,s.region,t.region,ds,dt,ks="epanech",hs,kt="box",ht,correction=TRUE){
+iLISTA <- function(xyt,i,s.region,t.region,ds,dt,ks="epanech",hs,kt="epanech",ht,correction=TRUE){
   
   pts <- xyt[, 1:2]
   xytimes <- xyt[ ,3]
