@@ -15,7 +15,7 @@ install_github('frajaroco/pdLISTA')
 ```
 ## CiteBibtex
 ```
-@misc{r15,
+@misc{r16,
 	author = {Francisco J. Rodr\'{i}guez-Cort\'{e}s},
 	title = {pdLISTA: Second-order product density local indicator of spatio-temporal association function},
 	year = {2016},
