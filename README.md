@@ -1,6 +1,6 @@
 # pdLISTA
 
-Spatio-temporal cluster detection and classification through of the product density LISTA functions. This repository is based on `spatstat`, `splancs`, `stpp` and `KernSmooth` packages.
+Spatio-temporal cluster detection and classification through product density LISTA functions. This repository is based on `spatstat`, `splancs`, `stpp` and `KernSmooth` packages.
 
 ## Installation guide
 
@@ -13,6 +13,9 @@ and thereafter run the commands:
 require(devtools)
 install_github('frajaroco/pdLISTA')
 ```
+## References
+- [Siino, M., Rodríguez-Cortés, F. J., Mateu, J. and Adelfio, G. (2017). Testing for local structure in spatio-temporal point pattern data. **Submitted**.]
+
 ## CiteBibtex
 ```
 @misc{r16,
