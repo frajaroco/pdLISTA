@@ -4,17 +4,17 @@ Spatio-temporal cluster detection and classification through product density LIS
 
 ## Installation guide
 
-The easiest way to install the development version of pdLISTA from github is using the devtools package which can be installed run the next command:
+The easiest way to install the development version of `pdLISTA` from GitHub is using the `remotes` package which can be installed run the next command:
 ```
-install.packages('devtools', dependencies=TRUE)
+install.packages('remotes')
 ```
 and thereafter run the commands:
 ```
-require(devtools)
+require(remotes)
 install_github('frajaroco/pdLISTA')
 ```
 ## References
-- Siino, M., Rodríguez-Cortés, F. J., Mateu, J. and Adelfio, G. (2017). Testing for local structure in spatio-temporal point pattern data. **Submitted**.
+- Siino, M., Rodríguez-Cortés, F. J., Mateu, J. and Adelfio, G. (2017). Testing for local structure in spatio-temporal point pattern data. *Environmetrics*. **Forthcoming**.
 
 ## CiteBibtex
 ```
