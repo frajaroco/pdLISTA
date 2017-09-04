@@ -14,8 +14,7 @@ require(remotes)
 install_github('frajaroco/pdLISTA')
 ```
 ## References
-- Siino, M., Rodríguez-Cortés, F. J., Mateu, J. and Adelfio, G. (2017). Testing for local structure in spatio-temporal point pattern data. *Environmetrics*. **Forthcoming**.
-
+- [Siino, M., Rodríguez-Cortés, F. J., Mateu, J. and Adelfio, G. (2017). Testing for local structure in spatio-temporal point pattern data. *Environmetrics*. DOI: 10.1002/env.2463.](http://onlinelibrary.wiley.com/doi/10.1002/env.2463/abstract)
 ## CiteBibtex
 ```
 @misc{r16,
